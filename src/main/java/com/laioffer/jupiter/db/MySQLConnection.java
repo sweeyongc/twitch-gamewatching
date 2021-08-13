@@ -42,8 +42,6 @@ public class MySQLConnection {
         saveItem(item);
 
         // Using ? and preparedStatement to prevent SQL injection
-        // Alternate (not preferred):
-        // String sql = String.format("INSERT INTO favorite_records (user_id, item_id) VALUES (%s, %s)", userId, item.getId());
         // IGNORE: skip the line execution if object already exists
         String sql = "INSERT IGNORE INTO favorite_records (user_id, item_id) VALUES (?, ?)";
         try {
