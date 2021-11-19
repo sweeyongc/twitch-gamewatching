@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonDeserialize(builder = Item.Builder.class)
@@ -20,7 +21,7 @@ public class Item {
     private final String thumbnailUrl;
 
     @JsonProperty("broadcaster_name")
-    @JsonAlias({ "user_name" })
+    @JsonAlias({"user_name"})
     private String broadcasterName;
 
     //not final because in search stream provided by twitch, there's no url
@@ -107,7 +108,7 @@ public class Item {
         private String thumbnailUrl;
 
         @JsonProperty("broadcaster_name")
-        @JsonAlias({ "user_name" })
+        @JsonAlias({"user_name"})
         private String broadcasterName;
 
         @JsonProperty("game_id")

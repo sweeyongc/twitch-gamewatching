@@ -15,6 +15,7 @@ public class ServletUtil {
         response.setContentType("application/json;charset=UTF-8");
         response.getWriter().print(new ObjectMapper().writeValueAsString(itemMap));
     }
+
     // Help encrypt the user password before save to the database
     public static String encryptPassword(String userId, String password) throws IOException {
         return DigestUtils.md5Hex(userId + DigestUtils.md5Hex(password)).toLowerCase();
